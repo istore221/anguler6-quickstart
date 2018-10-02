@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Hero} from '../../../types/types'
+import {Hero,Post} from '../../../types/types'
 import { HeroService } from '../services/hero.service';
+import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -11,6 +13,9 @@ import { HeroService } from '../services/hero.service';
 export class HeroComponent implements OnInit {
 
   heroes: Hero[];
+  posts: Post[];
+  posts$: Observable<Post[]>;
+
 
 
   constructor(private heroService: HeroService) {
@@ -19,6 +24,10 @@ export class HeroComponent implements OnInit {
 
   ngOnInit() {
     this.heroes = this.heroService.getHeroes();
+    this.posts$ = this.heroService.getPosts();
+
+
+
   }
 
 }

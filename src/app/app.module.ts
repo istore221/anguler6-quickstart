@@ -8,6 +8,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import {SampleModule} from './sample-module/sample.module';
 
 
@@ -19,6 +21,7 @@ import {SampleModule} from './sample-module/sample.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MyModule.forRoot(),
     SampleModule

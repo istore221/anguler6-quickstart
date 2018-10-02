@@ -4,3 +4,10 @@
     <h2>{{hero.hero}}</h2>
   </li>
 </ul>
+
+
+<ul class="posts__list">
+    <li class="post" *ngFor="let post of posts$ | async">
+        {{ post.id }} - {{ post.title }}
+    </li>
+</ul>
